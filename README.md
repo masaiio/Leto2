@@ -8,31 +8,36 @@ Uses Discord.Net https://github.com/RogueException/Discord.Net
 Based on Nadekobot by Kwoth https://github.com/Kwoth/NadekoBot
 
 
--TO DO LIST-
--add 
+-TO DO LIST- 
+
+
+-strings update--
+trivia, 8ball, .hgit, .readme, .guide
+
+-look into--
+.shop,  .meme list, .place list, .stats, .permrole change, launch.json
+ .resharper jetbrains 
+
+--Modify--
+waifu game / alliance or fame?
+currency flowers
+Nadeko Icon
+
+-api fixes-- 
+soundlcoud, my anime list, anilist
+
+-remove--
+
+--rename-- 
+datastructures nadeko random 
+
+-add features-- 
 eclipse phase tools 
-dice rolls 
-wiki links
-obsidian portal cnnects 
-post things in general  say commands. 
+better dice rolls 
+ep wiki links 
+obsidian portal api  
+say command for channels
+leveling system? 
+messege log 
+muse link 
 
--remove  
-imdb omdb xkcd
-
--strings 
-update trivia, 8ball 
-.hgit .readme .guide 
-
--look into 
-.shop
-.waifu 
-.currency 
-.meme list 
-.place list 
-.stats 
-.permrole change 
-
--api fixes 
-soundlcoud 
-anime list 
-anilist 
