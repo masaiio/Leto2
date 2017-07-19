@@ -79,8 +79,8 @@
     <PackageReference Include="System.Xml.XPath" Version="4.3.0" />
   </ItemGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'GlobalNadeko' ">
-    <DefineConstants>$(DefineConstants);GLOBAL_NADEKO</DefineConstants>
+  <PropertyGroup Condition=" '$(Configuration)' == 'GlobalLeto2' ">
+    <DefineConstants>$(DefineConstants);GLOBAL_Leto2</DefineConstants>
     <NoWarn>$(NoWarn);CS1573;CS1591</NoWarn>
   </PropertyGroup>
 
