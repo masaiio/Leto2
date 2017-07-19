@@ -11,6 +11,7 @@ eclipse phase tools
 dice rolls 
 wiki links
 obsidian portal cnnects 
+post things in general  say commands. 
 
 remove .linux .rategirl 
 imdb mdb yodify
@@ -28,6 +29,7 @@ xkcd
 meme list 
 place list 
 .stats 
+.permrole change 
 
 api 
 soundlcoud 
