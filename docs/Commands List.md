@@ -1,16 +1,13 @@
-You can support the project on patreon: <https://patreon.com/nadekobot> or paypal: <https://paypal.me/Kwoth>
+You can support the project on patreon: <none> or paypal: <none>
 
 ##Table of contents
 - [Help](#help)
 - [Administration](#administration)
-- [ClashOfClans](#clashofclans)
 - [CustomReactions](#customreactions)
 - [Gambling](#gambling)
 - [Games](#games)
 - [Music](#music)
-- [NSFW](#nsfw)
 - [Permissions](#permissions)
-- [Pokemon](#pokemon)
 - [Searches](#searches)
 - [Utility](#utility)
 
@@ -119,21 +116,6 @@ Commands and aliases | Description | Usage
 
 ###### [Back to ToC](#table-of-contents)
 
-### ClashOfClans  
-Commands and aliases | Description | Usage
-----------------|--------------|-------
-`.createwar` `.cw` | Creates a new war by specifying a size (>10 and multiple of 5) and enemy clan name. **Requires ManageMessages server permission.** | `.cw 15 The Enemy Clan`
-`.startwar` `.sw` | Starts a war with a given number.  | `.sw 15`
-`.listwar` `.lw` | Shows the active war claims by a number. Shows all wars in a short way if no number is specified.  | `.lw [war_number]` or `.lw`
-`.basecall` | Claims a certain base from a certain war. You can supply a name in the third optional argument to claim in someone else's place.  | `.basecall [war_number] [base_number] [optional_other_name]`
-`.callfinish1` `.cf1` | Finish your claim with 1 star if you destroyed a base. First argument is the war number, optional second argument is a base number if you want to finish for someone else.  | `.cf1 1` or `.cf1 1 5`
-`.callfinish2` `.cf2` | Finish your claim with 2 stars if you destroyed a base. First argument is the war number, optional second argument is a base number if you want to finish for someone else.  | `.cf2 1` or `.cf2 1 5`
-`.callfinish` `.cf` | Finish your claim with 3 stars if you destroyed a base. First argument is the war number, optional second argument is a base number if you want to finish for someone else.  | `.cf 1` or `.cf 1 5`
-`.endwar` `.ew` | Ends the war with a given index.  | `.ew [war_number]`
-`.uncall` | Removes your claim from a certain war. Optional second argument denotes a person in whose place to unclaim  | `.uc [war_number] [optional_other_name]`
-
-###### [Back to ToC](#table-of-contents)
-
 ### CustomReactions  
 Commands and aliases | Description | Usage
 ----------------|--------------|-------
@@ -193,7 +175,6 @@ Commands and aliases | Description | Usage
 `.choose` | Chooses a thing from a list of things  | `.choose Get up;Sleep;Sleep more`
 `.8ball` | Ask the 8ball a yes/no question.  | `.8ball should I do something`
 `.rps` | Play a game of Rocket-Paperclip-Scissors with Nadeko.  | `.rps scissors`
-`.rategirl` | Use the universal hot-crazy wife zone matrix to determine the girl's worth. It is everything young men need to know about women. At any moment in time, any woman you have previously located on this chart can vanish from that location and appear anywhere else on the chart.  | `.rategirl @SomeGurl`
 `.linux` | Prints a customizable Linux interjection  | `.linux Spyware Windows`
 `.acrophobia` `.acro` | Starts an Acrophobia game. Second argument is optional round length in seconds. (default is 60)  | `.acro` or `.acro 30`
 `.cleverbot` | Toggles cleverbot session. When enabled, the bot will reply to messages starting with bot mention in the server. Custom reactions starting with %mention% won't work if cleverbot is enabled. **Requires ManageMessages server permission.** | `.cleverbot`
@@ -268,23 +249,6 @@ Commands and aliases | Description | Usage
 
 ###### [Back to ToC](#table-of-contents)
 
-### NSFW  
-Commands and aliases | Description | Usage
-----------------|--------------|-------
-`.hentai` | Shows a hentai image from a random website (gelbooru or danbooru or konachan or atfbooru or yandere) with a given tag. Tag is optional but preferred. Only 1 tag allowed.  | `.hentai yuri`
-`.autohentai` | Posts a hentai every X seconds with a random tag from the provided tags. Use `|` to separate tags. 20 seconds minimum. Provide no arguments to disable. **Requires ManageMessages channel permission.** | `.autohentai 30 yuri|tail|long_hair` or `.autohentai`
-`.hentaibomb` | Shows a total 5 images (from gelbooru, danbooru, konachan, yandere and atfbooru). Tag is optional but preferred.  | `.hentaibomb yuri`
-`.yandere` | Shows a random image from yandere with a given tag. Tag is optional but preferred. (multiple tags are appended with +)  | `.yandere tag1+tag2`
-`.konachan` | Shows a random hentai image from konachan with a given tag. Tag is optional but preferred.  | `.konachan yuri`
-`.e621` | Shows a random hentai image from e621.net with a given tag. Tag is optional but preferred. Use spaces for multiple tags.  | `.e621 yuri kissing`
-`.rule34` | Shows a random image from rule34.xx with a given tag. Tag is optional but preferred. (multiple tags are appended with +)  | `.rule34 yuri+kissing`
-`.danbooru` | Shows a random hentai image from danbooru with a given tag. Tag is optional but preferred. (multiple tags are appended with +)  | `.danbooru yuri+kissing`
-`.gelbooru` | Shows a random hentai image from gelbooru with a given tag. Tag is optional but preferred. (multiple tags are appended with +)  | `.gelbooru yuri+kissing`
-`.boobs` | Real adult content.  | `.boobs`
-`.butts` `.ass` `.butt` | Real adult content.  | `.butts` or `.ass`
-
-###### [Back to ToC](#table-of-contents)
-
 ### Permissions  
 Commands and aliases | Description | Usage
 ----------------|--------------|-------
@@ -324,21 +288,9 @@ Commands and aliases | Description | Usage
 
 ###### [Back to ToC](#table-of-contents)
 
-### Pokemon  
-Commands and aliases | Description | Usage
-----------------|--------------|-------
-`.attack` | Attacks a target with the given move. Use `.movelist` to see a list of moves your type can use.  | `.attack "vine whip" @someguy`
-`.movelist` `.ml` | Lists the moves you are able to use  | `.ml`
-`.heal` | Heals someone. Revives those who fainted. Costs a NadekoFlower.   | `.heal @someone`
-`.type` | Get the poketype of the target.  | `.type @someone`
-`.settype` | Set your poketype. Costs a NadekoFlower. Provide no arguments to see a list of available types.  | `.settype fire` or `.settype`
-
-###### [Back to ToC](#table-of-contents)
-
 ### Searches  
 Commands and aliases | Description | Usage
 ----------------|--------------|-------
-`.lolban` | Shows top banned champions ordered by ban rate.  | `.lolban`
 `.weather` `.we` | Shows weather data for a specified city. You can also specify a country after a comma.  | `.we Moscow, RU`
 `.time` | Shows the current time and timezone in the specified location.  | `.time London, UK`
 `.youtube` `.yt` | Searches youtubes and shows the first result  | `.yt query`
@@ -350,9 +302,7 @@ Commands and aliases | Description | Usage
 `.lmgtfy` | Google something for an idiot.  | `.lmgtfy query`
 `.shorten` | Attempts to shorten an URL, if it fails, returns the input URL.  | `.shorten https://google.com`
 `.google` `.g` | Get a Google search link for some terms.  | `.google query`
-`.magicthegathering` `.mtg` | Searches for a Magic The Gathering card.  | `.magicthegathering about face` or `.mtg about face`
 `.hearthstone` `.hs` | Searches for a Hearthstone card and shows its image. Takes a while to complete.  | `.hs Ysera`
-`.yodify` `.yoda` | Translates your normal sentences into Yoda styled sentences!  | `.yoda my feelings hurt`
 `.urbandict` `.ud` | Searches Urban Dictionary for a word.  | `.ud Pineapple`
 `.define` `.def` | Finds a definition of a word.  | `.def heresy`
 `.#` | Searches Tagdef.com for a hashtag.  | `.# ff`
@@ -368,21 +318,11 @@ Commands and aliases | Description | Usage
 `.mal` | Shows basic info from a MyAnimeList profile.  | `.mal straysocks`
 `.anime` `.ani` `.aq` | Queries anilist for an anime and shows the first result.  | `.ani aquarion evol`
 `.manga` `.mang` `.mq` | Queries anilist for a manga and shows the first result.  | `.mq Shingeki no kyojin`
-`.yomama` `.ym` | Shows a random joke from <http://api.yomomma.info/>  | `.ym`
 `.randjoke` `.rj` | Shows a random joke from <http://tambal.azurewebsites.net/joke/random>  | `.rj`
-`.chucknorris` `.cn` | Shows a random Chuck Norris joke from <http://api.icndb.com/jokes/random/>  | `.cn`
-`.wowjoke` | Get one of Kwoth's penultimate WoW jokes.  | `.wowjoke`
-`.magicitem` `.mi` | Shows a random magic item from <https://1d4chan.org/wiki/List_of_/tg/%27s_magic_items>  | `.mi`
 `.memelist` | Pulls a list of memes you can use with `.memegen` from http://memegen.link/templates/  | `.memelist`
 `.memegen` | Generates a meme from memelist with top and bottom text.  | `.memegen biw "gets iced coffee" "in the winter"`
-`.osu` | Shows osu stats for a player.  | `.osu Name` or `.osu Name taiko`
-`.osub` | Shows information about an osu beatmap.  | `.osub https://osu.ppy.sh/s/127712`
-`.osu5` | Displays a user's top 5 plays.  | `.osu5 Name`
-`.overwatch` `.ow` | Show's basic stats on a player (competitive rank, playtime, level etc) Region codes are: `eu` `us` `cn` `kr`  | `.ow us Battletag#1337` or  `.overwatch eu Battletag#2016`
 `.placelist` | Shows the list of available tags for the `.place` command.  | `.placelist`
 `.place` | Shows a placeholder image of a given tag. Use `.placelist` to see all available tags. You can specify the width and height of the image as the last two optional arguments.  | `.place Cage` or `.place steven 500 400`
-`.pokemon` `.poke` | Searches for a pokemon.  | `.poke Sylveon`
-`.pokemonability` `.pokeab` | Searches for a pokemon ability.  | `.pokeab overgrow`
 `.hitbox` `.hb` | Notifies this channel when a certain user starts streaming. **Requires ManageMessages server permission.** | `.hitbox SomeStreamer`
 `.twitch` `.tw` | Notifies this channel when a certain user starts streaming. **Requires ManageMessages server permission.** | `.twitch SomeStreamer`
 `.beam` `.bm` | Notifies this channel when a certain user starts streaming. **Requires ManageMessages server permission.** | `.beam SomeStreamer`
@@ -393,7 +333,6 @@ Commands and aliases | Description | Usage
 `.autotrans` `.at` | Starts automatic translation of all messages by users who set their `.atl` in this channel. You can set "del" argument to automatically delete all translated user messages. **Requires Administrator server permission.** **Bot owner only** | `.at` or `.at del`
 `.autotranslang` `.atl` | Sets your source and target language to be used with `.at`. Specify no arguments to remove previously set value.  | `.atl en>fr`
 `.translangs` | Lists the valid languages for translation.  | `.translangs`
-`.xkcd` | Shows a XKCD comic. No arguments will retrieve random one. Number argument will retrieve a specific comic, and "latest" will get the latest one.  | `.xkcd` or `.xkcd 1400` or `.xkcd latest`
 
 ###### [Back to ToC](#table-of-contents)
 
