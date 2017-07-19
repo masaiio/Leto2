@@ -19,7 +19,6 @@ namespace Leto2bot.Services.Games
     {
         private readonly BotConfig _bc;
 
-        public readonly ConcurrentDictionary<ulong, GirlRating> GirlRatings = new ConcurrentDictionary<ulong, GirlRating>();
         public readonly ImmutableArray<string> EightBallResponses;
 
         private readonly Timer _t;

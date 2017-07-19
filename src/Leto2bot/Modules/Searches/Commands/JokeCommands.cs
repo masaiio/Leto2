@@ -24,16 +24,6 @@ namespace Leto2bot.Modules.Searches
             }
 
             [Leto2Command, Usage, Description, Aliases]
-            public async Task Yomama()
-            {
-                using (var http = new HttpClient())
-                {
-                    var response = await http.GetStringAsync("http://api.yomomma.info/").ConfigureAwait(false);
-                    await Context.Channel.SendConfirmAsync(JObject.Parse(response)["joke"].ToString() + " 😆").ConfigureAwait(false);
-                }
-            }
-
-            [Leto2Command, Usage, Description, Aliases]
             public async Task Randjoke()
             {
                 using (var http = new HttpClient())
@@ -49,16 +39,6 @@ namespace Leto2bot.Modules.Searches
                     var part2 = html.QuerySelector("dd").TextContent;
 
                     await Context.Channel.SendConfirmAsync("", part1 + "\n\n" + part2, footer: document.BaseUri).ConfigureAwait(false);
-                }
-            }
-
-            [Leto2Command, Usage, Description, Aliases]
-            public async Task ChuckNorris()
-            {
-                using (var http = new HttpClient())
-                {
-                    var response = await http.GetStringAsync("http://api.icndb.com/jokes/random/").ConfigureAwait(false);
-                    await Context.Channel.SendConfirmAsync(JObject.Parse(response)["value"]["joke"].ToString() + " 😆").ConfigureAwait(false);
                 }
             }
         }
