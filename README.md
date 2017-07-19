@@ -1,9 +1,12 @@
 Tabletop support Discord Bot
+
 Author: Masaiio
 Company: Near the Resolution
 
-Uses Discord.Net
-Based on Nadekobot
+---Attributions---
+Uses Discord.Net https://github.com/RogueException/Discord.Net
+Based on Nadekobot by Kwoth https://github.com/Kwoth/NadekoBot
+
 
 -TO DO LIST-
 -add 
@@ -14,7 +17,7 @@ obsidian portal cnnects
 post things in general  say commands. 
 
 -remove  
-imdb omdb yodify xkcd
+imdb omdb xkcd
 
 -strings 
 update trivia, 8ball 
