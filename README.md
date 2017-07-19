@@ -1,4 +1,6 @@
 Tabletop support Discord Bot
+Author: Masaiio
+Company: Near the Resolution
 
 Uses Discord.Net
 Based on Nadekobot
