@@ -1,16 +1,13 @@
-You can support the project on patreon: <https://patreon.com/nadekobot> or paypal: <https://paypal.me/Kwoth>
+You can support the project on patreon: <https://patreon.com/leto2bot> or paypal: <https://paypal.me/Kwoth>
 
 ##Table of contents
 - [Help](#help)
 - [Administration](#administration)
-- [ClashOfClans](#clashofclans)
 - [CustomReactions](#customreactions)
 - [Gambling](#gambling)
 - [Games](#games)
 - [Music](#music)
-- [NSFW](#nsfw)
 - [Permissions](#permissions)
-- [Pokemon](#pokemon)
 - [Searches](#searches)
 - [Utility](#utility)
 
@@ -47,7 +44,7 @@ Commands and aliases | Description | Usage
 `.logevents` | Shows a list of all events you can subscribe to with `.log` **Requires Administrator server permission.** **Bot owner only** | `.logevents`
 `.log` | Toggles logging event. Disables it if it is active anywhere on the server. Enables if it isn't active. Use `.logevents` to see a list of all events you can subscribe to. **Requires Administrator server permission.** **Bot owner only** | `.log userpresence` or `.log userbanned`
 `.migratedata` | Migrate data from old bot configuration **Bot owner only** | `.migratedata`
-`.setmuterole` | Sets a name of the role which will be assigned to people who should be muted. Default is nadeko-mute. **Requires ManageRoles server permission.** | `.setmuterole Silenced`
+`.setmuterole` | Sets a name of the role which will be assigned to people who should be muted. Default is leto2-mute. **Requires ManageRoles server permission.** | `.setmuterole Silenced`
 `.mute` | Mutes a mentioned user both from speaking and chatting. You can also specify time in minutes (up to 1440) for how long the user should be muted. **Requires ManageRoles server permission.** **Requires MuteMembers server permission.** | `.mute @Someone` or `.mute 30 @Someone`
 `.unmute` | Unmutes a mentioned user previously muted with `.mute` command. **Requires ManageRoles server permission.** **Requires MuteMembers server permission.** | `.unmute @Someone`
 `.chatmute` | Prevents a mentioned user from chatting in text channels. **Requires ManageRoles server permission.** | `.chatmute @Someone`
@@ -64,7 +61,7 @@ Commands and aliases | Description | Usage
 `.antispam` | Stops people from repeating same message X times in a row. You can specify to either mute, kick or ban the offenders. Max message count is 10. **Requires Administrator server permission.** | `.antispam 3 Mute` or `.antispam 4 Kick` or `.antispam 6 Ban`
 `.antispamignore` | Toggles whether antispam ignores current channel. Antispam must be enabled.  | `.antispamignore`
 `.antilist` `.antilst` | Shows currently enabled protection features.  | `.antilist`
-`.prune` `.clear` | `.prune` removes all Nadeko's messages in the last 100 messages. `.prune X` removes last `X` number of messages from the channel (up to 100). `.prune @Someone` removes all Someone's messages in the last 100 messages. `.prune @Someone X` removes last `X` number of 'Someone's' messages in the channel.  | `.prune` or `.prune 5` or `.prune @Someone` or `.prune @Someone X`
+`.prune` `.clear` | `.prune` removes all Leto2's messages in the last 100 messages. `.prune X` removes last `X` number of messages from the channel (up to 100). `.prune @Someone` removes all Someone's messages in the last 100 messages. `.prune @Someone X` removes last `X` number of 'Someone's' messages in the channel.  | `.prune` or `.prune 5` or `.prune @Someone` or `.prune @Someone X`
 `.slowmode` | Toggles slowmode. Disable by specifying no parameters. To enable, specify a number of messages each user can send, and an interval in seconds. For example 1 message every 5 seconds. **Requires ManageMessages server permission.** | `.slowmode 1 5` or `.slowmode`
 `.slowmodewl` | Ignores a role or a user from the slowmode feature. **Requires ManageMessages server permission.** | `.slowmodewl SomeRole` or `.slowmodewl AdminDude`
 `.adsarm` | Toggles the automatic deletion of confirmations for `.iam` and `.iamn` commands. **Requires ManageMessages server permission.** | `.adsarm`
@@ -81,12 +78,12 @@ Commands and aliases | Description | Usage
 `.scclr` | Removes all startup commands. **Bot owner only** | `.scclr`
 `.fwmsgs` | Toggles forwarding of non-command messages sent to bot's DM to the bot owners **Bot owner only** | `.fwmsgs`
 `.fwtoall` | Toggles whether messages will be forwarded to all bot owners or only to the first one specified in the credentials.json file **Bot owner only** | `.fwtoall`
-`.leave` | Makes Nadeko leave the server. Either server name or server ID is required. **Bot owner only** | `.leave 123123123331`
+`.leave` | Makes Leto2 leave the server. Either server name or server ID is required. **Bot owner only** | `.leave 123123123331`
 `.die` | Shuts the bot down. **Bot owner only** | `.die`
 `.setname` `.newnm` | Gives the bot a new name. **Bot owner only** | `.newnm BotName`
 `.setnick` | Changes the nickname of the bot on this server. You can also target other users to change their nickname. **Requires ManageNicknames server permission.** | `.setnick BotNickname` or `.setnick @SomeUser New Nickname`
 `.setstatus` | Sets the bot's status. (Online/Idle/Dnd/Invisible) **Bot owner only** | `.setstatus Idle`
-`.setavatar` `.setav` | Sets a new avatar image for the NadekoBot. Argument is a direct link to an image. **Bot owner only** | `.setav http://i.imgur.com/xTG3a1I.jpg`
+`.setavatar` `.setav` | Sets a new avatar image for the Leto2Bot. Argument is a direct link to an image. **Bot owner only** | `.setav http://i.imgur.com/xTG3a1I.jpg`
 `.setgame` | Sets the bots game. **Bot owner only** | `.setgame with snakes`
 `.setstream` | Sets the bots stream. First argument is the twitch link, second argument is stream name. **Bot owner only** | `.setstream TWITCHLINK Hello`
 `.send` | Sends a message to someone on a different server through the bot.  Separate server and channel/user ids with `|` and prefix the channel id with `c:` and the user id with `u:`. **Bot owner only** | `.send serverid|c:channelid message` or `.send serverid|u:userid message`
@@ -94,11 +91,11 @@ Commands and aliases | Description | Usage
 `.reloadimages` | Reloads images bot is using. Safe to use even when bot is being used heavily. **Bot owner only** | `.reloadimages`
 `.greetdel` `.grdel` | Sets the time it takes (in seconds) for greet messages to be auto-deleted. Set it to 0 to disable automatic deletion. **Requires ManageServer server permission.** | `.greetdel 0` or `.greetdel 30`
 `.greet` | Toggles anouncements on the current channel when someone joins the server. **Requires ManageServer server permission.** | `.greet`
-`.greetmsg` | Sets a new join announcement message which will be shown in the server's channel. Type `%user%` if you want to mention the new member. Using it with no message will show the current greet message. You can use embed json from <http://nadekobot.me/embedbuilder/> instead of a regular text, if you want the message to be embedded. **Requires ManageServer server permission.** | `.greetmsg Welcome, %user%.`
+`.greetmsg` | Sets a new join announcement message which will be shown in the server's channel. Type `%user%` if you want to mention the new member. Using it with no message will show the current greet message. You can use embed json from <http://leto2bot.me/embedbuilder/> instead of a regular text, if you want the message to be embedded. **Requires ManageServer server permission.** | `.greetmsg Welcome, %user%.`
 `.greetdm` | Toggles whether the greet messages will be sent in a DM (This is separate from greet - you can have both, any or neither enabled). **Requires ManageServer server permission.** | `.greetdm`
-`.greetdmmsg` | Sets a new join announcement message which will be sent to the user who joined. Type `%user%` if you want to mention the new member. Using it with no message will show the current DM greet message. You can use embed json from <http://nadekobot.me/embedbuilder/> instead of a regular text, if you want the message to be embedded. **Requires ManageServer server permission.** | `.greetdmmsg Welcome to the server, %user%`.
+`.greetdmmsg` | Sets a new join announcement message which will be sent to the user who joined. Type `%user%` if you want to mention the new member. Using it with no message will show the current DM greet message. You can use embed json from <http://leto2bot.me/embedbuilder/> instead of a regular text, if you want the message to be embedded. **Requires ManageServer server permission.** | `.greetdmmsg Welcome to the server, %user%`.
 `.bye` | Toggles anouncements on the current channel when someone leaves the server. **Requires ManageServer server permission.** | `.bye`
-`.byemsg` | Sets a new leave announcement message. Type `%user%` if you want to show the name the user who left. Type `%id%` to show id. Using this command with no message will show the current bye message. You can use embed json from <http://nadekobot.me/embedbuilder/> instead of a regular text, if you want the message to be embedded. **Requires ManageServer server permission.** | `.byemsg %user% has left.`
+`.byemsg` | Sets a new leave announcement message. Type `%user%` if you want to show the name the user who left. Type `%id%` to show id. Using this command with no message will show the current bye message. You can use embed json from <http://leto2bot.me/embedbuilder/> instead of a regular text, if you want the message to be embedded. **Requires ManageServer server permission.** | `.byemsg %user% has left.`
 `.byedel` | Sets the time it takes (in seconds) for bye messages to be auto-deleted. Set it to `0` to disable automatic deletion. **Requires ManageServer server permission.** | `.byedel 0` or `.byedel 30`
 `.timezones` | Lists all timezones available on the system to be used with `.timezone`.  | `.timezones`
 `.timezone` | Sets this guilds timezone. This affects bot's time output in this server (logs, etc..)  | `.timezone` or `.timezone GMT Standard Time`
@@ -119,25 +116,10 @@ Commands and aliases | Description | Usage
 
 ###### [Back to ToC](#table-of-contents)
 
-### ClashOfClans  
-Commands and aliases | Description | Usage
-----------------|--------------|-------
-`.createwar` `.cw` | Creates a new war by specifying a size (>10 and multiple of 5) and enemy clan name. **Requires ManageMessages server permission.** | `.cw 15 The Enemy Clan`
-`.startwar` `.sw` | Starts a war with a given number.  | `.sw 15`
-`.listwar` `.lw` | Shows the active war claims by a number. Shows all wars in a short way if no number is specified.  | `.lw [war_number]` or `.lw`
-`.basecall` | Claims a certain base from a certain war. You can supply a name in the third optional argument to claim in someone else's place.  | `.basecall [war_number] [base_number] [optional_other_name]`
-`.callfinish1` `.cf1` | Finish your claim with 1 star if you destroyed a base. First argument is the war number, optional second argument is a base number if you want to finish for someone else.  | `.cf1 1` or `.cf1 1 5`
-`.callfinish2` `.cf2` | Finish your claim with 2 stars if you destroyed a base. First argument is the war number, optional second argument is a base number if you want to finish for someone else.  | `.cf2 1` or `.cf2 1 5`
-`.callfinish` `.cf` | Finish your claim with 3 stars if you destroyed a base. First argument is the war number, optional second argument is a base number if you want to finish for someone else.  | `.cf 1` or `.cf 1 5`
-`.endwar` `.ew` | Ends the war with a given index.  | `.ew [war_number]`
-`.uncall` | Removes your claim from a certain war. Optional second argument denotes a person in whose place to unclaim  | `.uc [war_number] [optional_other_name]`
-
-###### [Back to ToC](#table-of-contents)
-
 ### CustomReactions  
 Commands and aliases | Description | Usage
 ----------------|--------------|-------
-`.addcustreact` `.acr` | Add a custom reaction with a trigger and a response. Running this command in server requires the Administration permission. Running this command in DM is Bot Owner only and adds a new global custom reaction. Guide here: <http://nadekobot.readthedocs.io/en/latest/Custom%20Reactions/>  | `.acr "hello" Hi there %user%`
+`.addcustreact` `.acr` | Add a custom reaction with a trigger and a response. Running this command in server requires the Administration permission. Running this command in DM is Bot Owner only and adds a new global custom reaction. Guide here: <http://leto2bot.readthedocs.io/en/latest/Custom%20Reactions/>  | `.acr "hello" Hi there %user%`
 `.listcustreact` `.lcr` | Lists global or server custom reactions (20 commands per page). Running the command in DM will list global custom reactions, while running it in server will list that server's custom reactions. Specifying `all` argument instead of the number will DM you a text file with a list of all custom reactions.  | `.lcr 1` or `.lcr all`
 `.listcustreactg` `.lcrg` | Lists global or server custom reactions (20 commands per page) grouped by trigger, and show a number of responses for each. Running the command in DM will list global custom reactions, while running it in server will list that server's custom reactions.  | `.lcrg 1`
 `.showcustreact` `.scr` | Shows a custom reaction's response on a given ID.  | `.scr 1`
@@ -161,7 +143,7 @@ Commands and aliases | Description | Usage
 `.leaderboard` `.lb` | Displays the bot's currency leaderboard.  | `.lb`
 `.race` | Starts a new animal race.  | `.race`
 `.joinrace` `.jr` | Joins a new race. You can specify an amount of currency for betting (optional). You will get YourBet*(participants-1) back if you win.  | `.jr` or `.jr 5`
-`.startevent` | Starts one of the events seen on public nadeko. **Bot owner only** | `.startevent flowerreaction`
+`.startevent` | Starts one of the events seen on public leto2. **Bot owner only** | `.startevent flowerreaction`
 `.roll` | Rolls 0-100. If you supply a number `X` it rolls up to 30 normal dice. If you split 2 numbers with letter `d` (`xdy`) it will roll `X` dice from 1 to `y`. `Y` can be a letter 'F' if you want to roll fate dice instead of dnd.  | `.roll` or `.roll 7` or `.roll 3d5` or `.roll 5dF`
 `.rolluo` | Rolls `X` normal dice (up to 30) unordered. If you split 2 numbers with letter `d` (`xdy`) it will roll `X` dice from 1 to `y`.  | `.rolluo` or `.rolluo 7` or `.rolluo 3d5`
 `.nroll` | Rolls in a given range.  | `.nroll 5` (rolls 0-5) or `.nroll 5-15`
@@ -177,7 +159,7 @@ Commands and aliases | Description | Usage
 `.shoprem` `.shoprm` | Removes an item from the shop by its ID. **Requires Administrator server permission.** | `.shoprm 1`
 `.slotstats` | Shows the total stats of the slot command for this bot's session. **Bot owner only** | `.slotstats`
 `.slottest` | Tests to see how much slots payout for X number of plays. **Bot owner only** | `.slottest 1000`
-`.slot` | Play Nadeko slots. Max bet is 9999. 1.5 second cooldown per user.  | `.slot 5`
+`.slot` | Play Leto2 slots. Max bet is 9999. 1.5 second cooldown per user.  | `.slot 5`
 `.claimwaifu` `.claim` | Claim a waifu for yourself by spending currency.  You must spend at least 10% more than her current value unless she set `.affinity` towards you.  | `.claim 50 @Himesama`
 `.divorce` | Releases your claim on a specific waifu. You will get some of the money you've spent back unless that waifu has an affinity towards you. 6 hours cooldown.  | `.divorce @CheatingSloot`
 `.affinity` | Sets your affinity towards someone you want to be claimed by. Setting affinity will reduce their `.claim` on you by 20%. You can leave second argument empty to clear your affinity. 30 minutes cooldown.  | `.affinity @MyHusband` or `.affinity`
@@ -192,7 +174,7 @@ Commands and aliases | Description | Usage
 `.leet` | Converts a text to leetspeak with 6 (1-6) severity levels  | `.leet 3 Hello`
 `.choose` | Chooses a thing from a list of things  | `.choose Get up;Sleep;Sleep more`
 `.8ball` | Ask the 8ball a yes/no question.  | `.8ball should I do something`
-`.rps` | Play a game of Rocket-Paperclip-Scissors with Nadeko.  | `.rps scissors`
+`.rps` | Play a game of Rocket-Paperclip-Scissors with Leto2.  | `.rps scissors`
 `.rategirl` | Use the universal hot-crazy wife zone matrix to determine the girl's worth. It is everything young men need to know about women. At any moment in time, any woman you have previously located on this chart can vanish from that location and appear anywhere else on the chart.  | `.rategirl @SomeGurl`
 `.linux` | Prints a customizable Linux interjection  | `.linux Spyware Windows`
 `.acrophobia` `.acro` | Starts an Acrophobia game. Second argument is optional round length in seconds. (default is 60)  | `.acro` or `.acro 30`
@@ -268,28 +250,11 @@ Commands and aliases | Description | Usage
 
 ###### [Back to ToC](#table-of-contents)
 
-### NSFW  
-Commands and aliases | Description | Usage
-----------------|--------------|-------
-`.hentai` | Shows a hentai image from a random website (gelbooru or danbooru or konachan or atfbooru or yandere) with a given tag. Tag is optional but preferred. Only 1 tag allowed.  | `.hentai yuri`
-`.autohentai` | Posts a hentai every X seconds with a random tag from the provided tags. Use `|` to separate tags. 20 seconds minimum. Provide no arguments to disable. **Requires ManageMessages channel permission.** | `.autohentai 30 yuri|tail|long_hair` or `.autohentai`
-`.hentaibomb` | Shows a total 5 images (from gelbooru, danbooru, konachan, yandere and atfbooru). Tag is optional but preferred.  | `.hentaibomb yuri`
-`.yandere` | Shows a random image from yandere with a given tag. Tag is optional but preferred. (multiple tags are appended with +)  | `.yandere tag1+tag2`
-`.konachan` | Shows a random hentai image from konachan with a given tag. Tag is optional but preferred.  | `.konachan yuri`
-`.e621` | Shows a random hentai image from e621.net with a given tag. Tag is optional but preferred. Use spaces for multiple tags.  | `.e621 yuri kissing`
-`.rule34` | Shows a random image from rule34.xx with a given tag. Tag is optional but preferred. (multiple tags are appended with +)  | `.rule34 yuri+kissing`
-`.danbooru` | Shows a random hentai image from danbooru with a given tag. Tag is optional but preferred. (multiple tags are appended with +)  | `.danbooru yuri+kissing`
-`.gelbooru` | Shows a random hentai image from gelbooru with a given tag. Tag is optional but preferred. (multiple tags are appended with +)  | `.gelbooru yuri+kissing`
-`.boobs` | Real adult content.  | `.boobs`
-`.butts` `.ass` `.butt` | Real adult content.  | `.butts` or `.ass`
-
-###### [Back to ToC](#table-of-contents)
-
 ### Permissions  
 Commands and aliases | Description | Usage
 ----------------|--------------|-------
 `.verbose` `.v` | Sets whether to show when a command/module is blocked.  | `.verbose true`
-`.permrole` `.pr` | Sets a role which can change permissions. Supply no parameters to see the current one. Default is 'Nadeko'.  | `.pr role`
+`.permrole` `.pr` | Sets a role which can change permissions. Supply no parameters to see the current one. Default is 'Leto2'.  | `.pr role`
 `.listperms` `.lp` | Lists whole permission chain with their indexes. You can specify an optional page number if there are a lot of permissions.  | `.lp` or `.lp 3`
 `.removeperm` `.rp` | Removes a permission from a given position in the Permissions list.  | `.rp 1`
 `.moveperm` `.mp` | Moves permission from one position to another in the Permissions list.  | `.mp 2 4`
@@ -324,21 +289,9 @@ Commands and aliases | Description | Usage
 
 ###### [Back to ToC](#table-of-contents)
 
-### Pokemon  
-Commands and aliases | Description | Usage
-----------------|--------------|-------
-`.attack` | Attacks a target with the given move. Use `.movelist` to see a list of moves your type can use.  | `.attack "vine whip" @someguy`
-`.movelist` `.ml` | Lists the moves you are able to use  | `.ml`
-`.heal` | Heals someone. Revives those who fainted. Costs a NadekoFlower.   | `.heal @someone`
-`.type` | Get the poketype of the target.  | `.type @someone`
-`.settype` | Set your poketype. Costs a NadekoFlower. Provide no arguments to see a list of available types.  | `.settype fire` or `.settype`
-
-###### [Back to ToC](#table-of-contents)
-
 ### Searches  
 Commands and aliases | Description | Usage
 ----------------|--------------|-------
-`.lolban` | Shows top banned champions ordered by ban rate.  | `.lolban`
 `.weather` `.we` | Shows weather data for a specified city. You can also specify a country after a comma.  | `.we Moscow, RU`
 `.time` | Shows the current time and timezone in the specified location.  | `.time London, UK`
 `.youtube` `.yt` | Searches youtubes and shows the first result  | `.yt query`
@@ -350,8 +303,6 @@ Commands and aliases | Description | Usage
 `.lmgtfy` | Google something for an idiot.  | `.lmgtfy query`
 `.shorten` | Attempts to shorten an URL, if it fails, returns the input URL.  | `.shorten https://google.com`
 `.google` `.g` | Get a Google search link for some terms.  | `.google query`
-`.magicthegathering` `.mtg` | Searches for a Magic The Gathering card.  | `.magicthegathering about face` or `.mtg about face`
-`.hearthstone` `.hs` | Searches for a Hearthstone card and shows its image. Takes a while to complete.  | `.hs Ysera`
 `.yodify` `.yoda` | Translates your normal sentences into Yoda styled sentences!  | `.yoda my feelings hurt`
 `.urbandict` `.ud` | Searches Urban Dictionary for a word.  | `.ud Pineapple`
 `.define` `.def` | Finds a definition of a word.  | `.def heresy`
@@ -371,18 +322,10 @@ Commands and aliases | Description | Usage
 `.yomama` `.ym` | Shows a random joke from <http://api.yomomma.info/>  | `.ym`
 `.randjoke` `.rj` | Shows a random joke from <http://tambal.azurewebsites.net/joke/random>  | `.rj`
 `.chucknorris` `.cn` | Shows a random Chuck Norris joke from <http://api.icndb.com/jokes/random/>  | `.cn`
-`.wowjoke` | Get one of Kwoth's penultimate WoW jokes.  | `.wowjoke`
-`.magicitem` `.mi` | Shows a random magic item from <https://1d4chan.org/wiki/List_of_/tg/%27s_magic_items>  | `.mi`
 `.memelist` | Pulls a list of memes you can use with `.memegen` from http://memegen.link/templates/  | `.memelist`
 `.memegen` | Generates a meme from memelist with top and bottom text.  | `.memegen biw "gets iced coffee" "in the winter"`
-`.osu` | Shows osu stats for a player.  | `.osu Name` or `.osu Name taiko`
-`.osub` | Shows information about an osu beatmap.  | `.osub https://osu.ppy.sh/s/127712`
-`.osu5` | Displays a user's top 5 plays.  | `.osu5 Name`
-`.overwatch` `.ow` | Show's basic stats on a player (competitive rank, playtime, level etc) Region codes are: `eu` `us` `cn` `kr`  | `.ow us Battletag#1337` or  `.overwatch eu Battletag#2016`
 `.placelist` | Shows the list of available tags for the `.place` command.  | `.placelist`
 `.place` | Shows a placeholder image of a given tag. Use `.placelist` to see all available tags. You can specify the width and height of the image as the last two optional arguments.  | `.place Cage` or `.place steven 500 400`
-`.pokemon` `.poke` | Searches for a pokemon.  | `.poke Sylveon`
-`.pokemonability` `.pokeab` | Searches for a pokemon ability.  | `.pokeab overgrow`
 `.hitbox` `.hb` | Notifies this channel when a certain user starts streaming. **Requires ManageMessages server permission.** | `.hitbox SomeStreamer`
 `.twitch` `.tw` | Notifies this channel when a certain user starts streaming. **Requires ManageMessages server permission.** | `.twitch SomeStreamer`
 `.beam` `.bm` | Notifies this channel when a certain user starts streaming. **Requires ManageMessages server permission.** | `.beam SomeStreamer`
@@ -412,14 +355,14 @@ Commands and aliases | Description | Usage
 `.channeltopic` `.ct` | Sends current channel's topic as a message.  | `.ct`
 `.createinvite` `.crinv` | Creates a new invite which has infinite max uses and never expires. **Requires CreateInstantInvite channel permission.** | `.crinv`
 `.shardstats` | Stats for shards. Paginated with 25 shards per page.  | `.shardstats` or `.shardstats 2`
-`.stats` | Shows some basic stats for Nadeko.  | `.stats`
+`.stats` | Shows some basic stats for Leto2.  | `.stats`
 `.showemojis` `.se` | Shows a name and a link to every SPECIAL emoji in the message.  | `.se A message full of SPECIAL emojis`
 `.listservers` | Lists servers the bot is on with some basic info. 15 per page. **Bot owner only** | `.listservers 3`
 `.savechat` | Saves a number of messages to a text file and sends it to you. **Bot owner only** | `.savechat 150`
 `.ping` | Ping the bot to see if there are latency issues.  | `.ping`
 `.calculate` `.calc` | Evaluate a mathematical expression.  | `.calc 1+1`
 `.calcops` | Shows all available operations in the `.calc` command  | `.calcops`
-`.alias` `.cmdmap` | Create a custom alias for a certain Nadeko command. Provide no alias to remove the existing one. **Requires Administrator server permission.** | `.alias allin $bf 100 h` or `.alias "linux thingy" >loonix Spyware Windows`
+`.alias` `.cmdmap` | Create a custom alias for a certain Leto2 command. Provide no alias to remove the existing one. **Requires Administrator server permission.** | `.alias allin $bf 100 h` or `.alias "linux thingy" >loonix Spyware Windows`
 `.aliaslist` `.cmdmaplist` `.aliases` | Shows the list of currently set aliases. Paginated.  | `.aliaslist` or `.aliaslist 3`
 `.serverinfo` `.sinfo` | Shows info about the server the bot is on. If no server is supplied, it defaults to current one.  | `.sinfo Some Server`
 `.channelinfo` `.cinfo` | Shows info about the channel. If no channel is supplied, it defaults to current one.  | `.cinfo #some-channel`

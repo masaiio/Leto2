@@ -25,12 +25,6 @@ namespace Leto2bot.Services.Searches
         public ConcurrentDictionary<ulong, bool> TranslatedChannels { get; } = new ConcurrentDictionary<ulong, bool>();
         public ConcurrentDictionary<UserChannelPair, string> UserLanguages { get; } = new ConcurrentDictionary<UserChannelPair, string>();
         
-        public readonly string PokemonAbilitiesFile = "data/pokemon/pokemon_abilities7.json";
-        public readonly string PokemonListFile = "data/pokemon/pokemon_list7.json";
-        public Dictionary<string, SearchPokemon> Pokemons { get; } = new Dictionary<string, SearchPokemon>();
-        public Dictionary<string, SearchPokemonAbility> PokemonAbilities { get; } = new Dictionary<string, SearchPokemonAbility>();
-
-        public List<WoWJoke> WowJokes { get; } = new List<WoWJoke>();
         public List<MagicItem> MagicItems { get; } = new List<MagicItem>();
 
         private readonly ConcurrentDictionary<ulong?, SearchImageCacher> _imageCacher = new ConcurrentDictionary<ulong?, SearchImageCacher>();
@@ -76,26 +70,8 @@ namespace Leto2bot.Services.Searches
                 return Task.CompletedTask;
             };
 
-            //pokemon commands
-            if (File.Exists(PokemonListFile))
-            {
-                Pokemons = JsonConvert.DeserializeObject<Dictionary<string, SearchPokemon>>(File.ReadAllText(PokemonListFile));
-            }
-            else
-                _log.Warn(PokemonListFile + " is missing. Pokemon abilities not loaded.");
-            if (File.Exists(PokemonAbilitiesFile))
-                PokemonAbilities = JsonConvert.DeserializeObject<Dictionary<string, SearchPokemonAbility>>(File.ReadAllText(PokemonAbilitiesFile));
-            else
-                _log.Warn(PokemonAbilitiesFile + " is missing. Pokemon abilities not loaded.");
 
             //joke commands
-            if (File.Exists("data/wowjokes.json"))
-            {
-                WowJokes = JsonConvert.DeserializeObject<List<WoWJoke>>(File.ReadAllText("data/wowjokes.json"));
-            }
-            else
-                _log.Warn("data/wowjokes.json is missing. WOW Jokes are not loaded.");
-
             if (File.Exists("data/magicitems.json"))
             {
                 MagicItems = JsonConvert.DeserializeObject<List<MagicItem>>(File.ReadAllText("data/magicitems.json"));
