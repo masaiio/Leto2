@@ -159,7 +159,7 @@ namespace Leto2bot.Modules.Searches
             }
             catch
             {
-                _log.Warn("Falling back to Imgur search.");
+                 _log.Warn("Falling back to Imgur search.");
 
                 var fullQueryLink = $"http://imgur.com/search?q={ terms }";
                 var config = Configuration.Default.WithDefaultLoader();
