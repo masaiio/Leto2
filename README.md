@@ -6,32 +6,30 @@ Uses Discord.Net
 Based on Nadekobot
 
 -TO DO LIST-
-add 
+-add 
 eclipse phase tools 
 dice rolls 
 wiki links
 obsidian portal cnnects 
 post things in general  say commands. 
 
-remove .linux .rategirl 
-imdb mdb yodify
+-remove  
+imdb omdb yodify xkcd
 
 -strings 
 update trivia, 8ball 
 .hgit .readme .guide 
-yomama chuck noirris
-xkcd
 
 -look into 
 .shop
 .waifu 
 .currency 
-meme list 
-place list 
+.meme list 
+.place list 
 .stats 
 .permrole change 
 
-api 
+-api fixes 
 soundlcoud 
 anime list 
 anilist 
