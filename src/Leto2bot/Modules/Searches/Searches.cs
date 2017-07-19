@@ -101,21 +101,6 @@ namespace Leto2bot.Modules.Searches
         }
 
         [Leto2Command, Usage, Description, Aliases]
-        public async Task Imdb([Remainder] string query = null)
-        {
-            if (!(await ValidateQuery(Context.Channel, query).ConfigureAwait(false))) return;
-            await Context.Channel.TriggerTypingAsync().ConfigureAwait(false);
-
-            var movie = await OmdbProvider.FindMovie(query, _google);
-            if (movie == null)
-            {
-                await ReplyErrorLocalized("imdb_fail").ConfigureAwait(false);
-                return;
-            }
-            await Context.Channel.EmbedAsync(movie.GetEmbed()).ConfigureAwait(false);
-        }
-
-        [Leto2Command, Usage, Description, Aliases]
         public async Task RandomCat()
         {
             using (var http = new HttpClient())
@@ -327,42 +312,6 @@ namespace Leto2bot.Modules.Searches
                     $"[{Format.Bold(res?.Title)}]({(await _google.ShortenUrl(res?.Link))})\n{res?.Text}\n\n"))
                 .ConfigureAwait(false);
             await Context.Channel.EmbedAsync(embed.WithDescription(string.Concat(desc))).ConfigureAwait(false);
-        }
-
-
-        [Leto2Command, Usage, Description, Aliases]
-        public async Task Yodify([Remainder] string query = null)
-        {
-            if (string.IsNullOrWhiteSpace(_creds.MashapeKey))
-            {
-                await ReplyErrorLocalized("mashape_api_missing").ConfigureAwait(false);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(query))
-                return;
-
-            await Context.Channel.TriggerTypingAsync().ConfigureAwait(false);
-            using (var http = new HttpClient())
-            {
-                http.DefaultRequestHeaders.Clear();
-                http.DefaultRequestHeaders.Add("X-Mashape-Key", _creds.MashapeKey);
-                http.DefaultRequestHeaders.Add("Accept", "text/plain");
-                var res = await http.GetStringAsync($"https://yoda.p.mashape.com/yoda?sentence={Uri.EscapeUriString(query)}").ConfigureAwait(false);
-                try
-                {
-                    var embed = new EmbedBuilder()
-                        .WithUrl("http://www.yodaspeak.co.uk/")
-                        .WithAuthor(au => au.WithName("Yoda").WithIconUrl("http://www.yodaspeak.co.uk/yoda-small1.gif"))
-                        .WithDescription(res)
-                        .WithOkColor();
-                    await Context.Channel.EmbedAsync(embed).ConfigureAwait(false);
-                }
-                catch
-                {
-                    await ReplyErrorLocalized("yodify_error").ConfigureAwait(false);
-                }
-            }
         }
 
         [Leto2Command, Usage, Description, Aliases]
