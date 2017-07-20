@@ -11,12 +11,10 @@ namespace Leto2bot.Services
         string GoogleApiKey { get; }
         ImmutableArray<ulong> OwnerIds { get; }
         string MashapeKey { get; }
-        string LoLApiKey { get; }
         string PatreonAccessToken { get; }
         string CarbonKey { get; }
 
         DBConfig Db { get; }
-        string OsuApiKey { get; }
 
         bool IsOwner(IUser u);
         int TotalShards { get; }

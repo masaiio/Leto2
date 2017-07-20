@@ -58,10 +58,8 @@ namespace Leto2bot.Services.Impl
                     Environment.Exit(3);
                 }
                 OwnerIds = data.GetSection("OwnerIds").GetChildren().Select(c => ulong.Parse(c.Value)).ToImmutableArray();
-                LoLApiKey = data[nameof(LoLApiKey)];
                 GoogleApiKey = data[nameof(GoogleApiKey)];
                 MashapeKey = data[nameof(MashapeKey)];
-                OsuApiKey = data[nameof(OsuApiKey)];
                 PatreonAccessToken = data[nameof(PatreonAccessToken)];
                 PatreonCampaignId = data[nameof(PatreonCampaignId)] ?? "334038";
                 ShardRunCommand = data[nameof(ShardRunCommand)];

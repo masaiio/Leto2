@@ -11,7 +11,6 @@ using Leto2bot.Modules.Searches.Models;
 using System.Collections.Generic;
 using Leto2bot.Extensions;
 using System.IO;
-using Leto2bot.Modules.Searches.Commands.OMDB;
 using Leto2bot.Modules.Searches.Commands.Models;
 using AngleSharp;
 using AngleSharp.Dom.Html;

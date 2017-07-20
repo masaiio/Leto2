@@ -23,9 +23,6 @@ namespace Leto2bot.Services.Impl
         private const string _slotNumbersPath = _basePath + "slots/numbers/";
         private const string _slotEmojisPath = _basePath + "slots/emojis/";
 
-        private const string _wifeMatrixPath = _basePath + "rategirl/wifematrix.png";
-        private const string _rategirlDot = _basePath + "rategirl/dot.png";
-
 
         public ImmutableArray<byte> Heads { get; private set; }
         public ImmutableArray<byte> Tails { get; private set; }
@@ -37,9 +34,6 @@ namespace Leto2bot.Services.Impl
         public ImmutableArray<byte> SlotBackground { get; private set; }
         public ImmutableArray<ImmutableArray<byte>> SlotNumbers { get; private set; }
         public ImmutableArray<ImmutableArray<byte>> SlotEmojis { get; private set; }
-
-        public ImmutableArray<byte> WifeMatrix { get; private set; }
-        public ImmutableArray<byte> RategirlDot { get; private set; }
 
         public ImagesService()
         {
@@ -74,9 +68,6 @@ namespace Leto2bot.Services.Impl
                     .OrderBy(f => int.Parse(Path.GetFileNameWithoutExtension(f)))
                     .Select(x => File.ReadAllBytes(x).ToImmutableArray())
                     .ToImmutableArray();
-
-                WifeMatrix = File.ReadAllBytes(_wifeMatrixPath).ToImmutableArray();
-                RategirlDot = File.ReadAllBytes(_rategirlDot).ToImmutableArray();
             }
             catch (Exception ex)
             {

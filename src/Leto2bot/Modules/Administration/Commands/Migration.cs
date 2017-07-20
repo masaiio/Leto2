@@ -365,16 +365,10 @@ namespace Leto2bot.Modules.Administration
                         ModuleName = "Searches",
                         Prefix = oldConfig.CommandPrefixes.Searches
                     },
-                    new ModulePrefix() {ModuleName = "NSFW", Prefix = oldConfig.CommandPrefixes.NSFW},
                     new ModulePrefix()
                     {
                         ModuleName = "Conversations",
                         Prefix = oldConfig.CommandPrefixes.Conversations
-                    },
-                    new ModulePrefix()
-                    {
-                        ModuleName = "ClashOfClans",
-                        Prefix = oldConfig.CommandPrefixes.ClashOfClans
                     },
                     new ModulePrefix() {ModuleName = "Help", Prefix = oldConfig.CommandPrefixes.Help},
                     new ModulePrefix() {ModuleName = "Music", Prefix = oldConfig.CommandPrefixes.Music},
@@ -395,7 +389,6 @@ namespace Leto2bot.Modules.Administration
                         ModuleName = "Programming",
                         Prefix = oldConfig.CommandPrefixes.Programming
                     },
-                    new ModulePrefix() {ModuleName = "Pokemon", Prefix = oldConfig.CommandPrefixes.Pokemon},
                     new ModulePrefix() {ModuleName = "Utility", Prefix = oldConfig.CommandPrefixes.Utility}
                 });
 

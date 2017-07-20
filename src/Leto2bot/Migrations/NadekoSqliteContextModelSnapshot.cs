@@ -186,56 +186,6 @@ namespace Leto2bot.Migrations
                     b.ToTable("BotConfig");
                 });
 
-            modelBuilder.Entity("Leto2Bot.Services.Database.Models.ClashCaller", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<bool>("BaseDestroyed");
-
-                    b.Property<string>("CallUser");
-
-                    b.Property<int>("ClashWarId");
-
-                    b.Property<DateTime?>("DateAdded");
-
-                    b.Property<int?>("SequenceNumber");
-
-                    b.Property<int>("Stars");
-
-                    b.Property<DateTime>("TimeAdded");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClashWarId");
-
-                    b.ToTable("ClashCallers");
-                });
-
-            modelBuilder.Entity("Leto2Bot.Services.Database.Models.ClashWar", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<ulong>("ChannelId");
-
-                    b.Property<DateTime?>("DateAdded");
-
-                    b.Property<string>("EnemyClan");
-
-                    b.Property<ulong>("GuildId");
-
-                    b.Property<int>("Size");
-
-                    b.Property<DateTime>("StartedAt");
-
-                    b.Property<int>("WarState");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ClashOfClans");
-                });
-
             modelBuilder.Entity("Leto2Bot.Services.Database.Models.CommandAlias", b =>
                 {
                     b.Property<int>("Id")

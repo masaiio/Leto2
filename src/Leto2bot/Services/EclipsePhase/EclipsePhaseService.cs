@@ -13,25 +13,21 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Leto2bot.Services.Games
+namespace Leto2bot.Services.EclipsePhase
 {
-    public class GamesService
+    public class EclipsePhaseService
     {
         private readonly BotConfig _bc;
 
-        public readonly ImmutableArray<string> EightBallResponses;
 
         private readonly DiscordSocketClient _client;
         private readonly LetoStrings _strings;
         private readonly IImagesService _images;
         private readonly Logger _log;
 
-        public readonly string TypingArticlesPath = "data/typing_articles2.json";
         private readonly CommandHandler _cmdHandler;
 
-        public List<TypingArticle> TypingArticles { get; } = new List<TypingArticle>();
-
-        public GamesService(DiscordSocketClient client, BotConfig bc, IEnumerable<GuildConfig> gcs, 
+        public EclipsePhaseService(DiscordSocketClient client, BotConfig bc, IEnumerable<GuildConfig> gcs,
             LetoStrings strings, IImagesService images, CommandHandler cmdHandler)
         {
             _bc = bc;
@@ -41,29 +37,6 @@ namespace Leto2bot.Services.Games
             _cmdHandler = cmdHandler;
             _log = LogManager.GetCurrentClassLogger();
 
-            //8ball
-            EightBallResponses = _bc.EightBallResponses.Select(ebr => ebr.Text).ToImmutableArray();
-
-            try
-            {
-                TypingArticles = JsonConvert.DeserializeObject<List<TypingArticle>>(File.ReadAllText(TypingArticlesPath));
-            }
-            catch (Exception ex)
-            {
-                _log.Warn("Error while loading typing articles {0}", ex.ToString());
-                TypingArticles = new List<TypingArticle>();
-            }
-        }
-
-        public void AddTypingArticle(IUser user, string text)
-        {
-            TypingArticles.Add(new TypingArticle
-            {
-                Title = $"Text added on {DateTime.UtcNow} by {user}",
-                Text = text.SanitizeMentions(),
-            });
-
-            File.WriteAllText(TypingArticlesPath, JsonConvert.SerializeObject(TypingArticles));
         }
 
         public ConcurrentHashSet<ulong> GenerationChannels { get; }
@@ -73,7 +46,7 @@ namespace Leto2bot.Services.Games
         public ConcurrentDictionary<ulong, DateTime> LastGenerations { get; } = new ConcurrentDictionary<ulong, DateTime>();
 
         private ConcurrentDictionary<ulong, object> _locks { get; } = new ConcurrentDictionary<ulong, object>();
-        
+
         public (string Name, ImmutableArray<byte> Data) GetRandomCurrencyImage()
         {
             var rng = new Leto2Random();

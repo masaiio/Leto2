@@ -8,9 +8,7 @@ namespace Leto2bot.Modules.Administration.Commands.Migration
     {
         public string Administration { get; set; }
         public string Searches { get; set; }
-        public string NSFW { get; set; }
         public string Conversations { get; set; }
-        public string ClashOfClans { get; set; }
         public string Help { get; set; }
         public string Music { get; set; }
         public string Trello { get; set; }
@@ -18,7 +16,6 @@ namespace Leto2bot.Modules.Administration.Commands.Migration
         public string Gambling { get; set; }
         public string Permissions { get; set; }
         public string Programming { get; set; }
-        public string Pokemon { get; set; }
         public string Utility { get; set; }
     }
 

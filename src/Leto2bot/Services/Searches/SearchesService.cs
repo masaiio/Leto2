@@ -25,7 +25,6 @@ namespace Leto2bot.Services.Searches
         public ConcurrentDictionary<ulong, bool> TranslatedChannels { get; } = new ConcurrentDictionary<ulong, bool>();
         public ConcurrentDictionary<UserChannelPair, string> UserLanguages { get; } = new ConcurrentDictionary<UserChannelPair, string>();
         
-        public List<MagicItem> MagicItems { get; } = new List<MagicItem>();
 
         private readonly ConcurrentDictionary<ulong?, SearchImageCacher> _imageCacher = new ConcurrentDictionary<ulong?, SearchImageCacher>();
 
@@ -72,12 +71,6 @@ namespace Leto2bot.Services.Searches
 
 
             //joke commands
-            if (File.Exists("data/magicitems.json"))
-            {
-                MagicItems = JsonConvert.DeserializeObject<List<MagicItem>>(File.ReadAllText("data/magicitems.json"));
-            }
-            else
-                _log.Warn("data/magicitems.json is missing. Magic items are not loaded.");
         }
 
         public async Task<string> Translate(string langs, string text = null)

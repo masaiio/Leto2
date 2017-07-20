@@ -17,6 +17,7 @@ using System.Threading;
 using Leto2bot.Services.Searches;
 using Leto2bot.Services.Music;
 using Leto2bot.Services.CustomReactions;
+using Leto2bot.Services.EclipsePhase;
 using Leto2bot.Services.Games;
 using Leto2bot.Services.Administration;
 using Leto2bot.Services.Permissions;
@@ -190,6 +191,11 @@ namespace Leto2bot
                 var pollService = new PollService(Client, Strings);
                 #endregion
 
+                #region EclipsePhase
+                var eclipsePhaseService = new EclipsePhaseService(Client, BotConfig, AllGuildConfigs, Strings, Images, CommandHandler);
+                #endregion
+
+
                 #region administration
                 var administrationService = new AdministrationService(AllGuildConfigs, CommandHandler);
                 var greetSettingsService = new GreetSettingsService(Client, AllGuildConfigs, Db);
@@ -240,6 +246,7 @@ namespace Leto2bot
                     .Add<GamesService>(gamesService)
                         .Add(chatterBotService)
                         .Add(pollService)
+                    .Add<EclipsePhaseService>(eclipsePhaseService)
                     .Add<AdministrationService>(administrationService)
                         .Add(selfService)
                         .Add(vcRoleService)
@@ -353,7 +360,7 @@ namespace Leto2bot
 
 
             bool isPublicLeto2 = false;
-#if GLOBAL_NADEKO
+#if GLOBAL_LETO2
             isPublicLeto2 = true;
 #endif
             //_log.Info(string.Join(", ", CommandService.Commands

@@ -15,9 +15,6 @@ namespace Leto2bot.Services
         ImmutableArray<ImmutableArray<byte>> SlotEmojis { get; }
         ImmutableArray<ImmutableArray<byte>> SlotNumbers { get; }
 
-        ImmutableArray<byte> WifeMatrix { get; }
-        ImmutableArray<byte> RategirlDot { get; }
-
         void Reload();
     }
 }

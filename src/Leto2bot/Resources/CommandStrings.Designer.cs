@@ -5406,33 +5406,6 @@ namespace Leto2bot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to overwatch ow.
-        /// </summary>
-        public static string overwatch_cmd {
-            get {
-                return ResourceManager.GetString("overwatch_cmd", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to Show&apos;s basic stats on a player (competitive rank, playtime, level etc) Region codes are: `eu` `us` `cn` `kr`.
-        /// </summary>
-        public static string overwatch_desc {
-            get {
-                return ResourceManager.GetString("overwatch_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `{0}ow us Battletag#1337` or  `{0}overwatch eu Battletag#2016`.
-        /// </summary>
-        public static string overwatch_usage {
-            get {
-                return ResourceManager.GetString("overwatch_usage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///    Looks up a localized string similar to parewrel.
         /// </summary>
         public static string patreonrewardsreload_cmd {
@@ -5701,58 +5674,13 @@ namespace Leto2bot.Resources {
                 return ResourceManager.GetString("playlists_usage", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to pokemon poke.
-        /// </summary>
-        public static string pokemon_cmd {
-            get {
-                return ResourceManager.GetString("pokemon_cmd", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to Searches for a pokemon..
-        /// </summary>
-        public static string pokemon_desc {
-            get {
-                return ResourceManager.GetString("pokemon_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `{0}poke Sylveon`.
-        /// </summary>
-        public static string pokemon_usage {
-            get {
-                return ResourceManager.GetString("pokemon_usage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to pokemonability pokeab.
-        /// </summary>
-        public static string pokemonability_cmd {
-            get {
-                return ResourceManager.GetString("pokemonability_cmd", resourceCulture);
-            }
-        }
-        
+ 
         /// <summary>
         ///    Looks up a localized string similar to Searches for a pokemon ability..
         /// </summary>
         public static string pokemonability_desc {
             get {
                 return ResourceManager.GetString("pokemonability_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `{0}pokeab overgrow`.
-        /// </summary>
-        public static string pokemonability_usage {
-            get {
-                return ResourceManager.GetString("pokemonability_usage", resourceCulture);
             }
         }
         
@@ -6131,33 +6059,6 @@ namespace Leto2bot.Resources {
         public static string randomimage_usage {
             get {
                 return ResourceManager.GetString("randomimage_usage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to rategirl.
-        /// </summary>
-        public static string rategirl_cmd {
-            get {
-                return ResourceManager.GetString("rategirl_cmd", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to Use the universal hot-crazy wife zone matrix to determine the girl&apos;s worth. It is everything young men need to know about women. At any moment in time, any woman you have previously located on this chart can vanish from that location and appear anywhere else on the chart..
-        /// </summary>
-        public static string rategirl_desc {
-            get {
-                return ResourceManager.GetString("rategirl_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `{0}rategirl @SomeGurl`.
-        /// </summary>
-        public static string rategirl_usage {
-            get {
-                return ResourceManager.GetString("rategirl_usage", resourceCulture);
             }
         }
         
