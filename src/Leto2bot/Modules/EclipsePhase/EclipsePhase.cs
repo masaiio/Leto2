@@ -20,7 +20,7 @@ namespace Leto2bot.Modules.EclipsePhase
             _images = images;
         }
 
-        [Leto2Command, Usage, Description, Aliases]
+        [Leto2Command, Usage, Description, Aliases] // EP Test command 
         public async Task EPChoose([Remainder] string list = null)
         {
             if (string.IsNullOrWhiteSpace(list))
@@ -32,9 +32,10 @@ namespace Leto2bot.Modules.EclipsePhase
             await Context.Channel.SendConfirmAsync("🤔", listArr[rng.Next(0, listArr.Length)]).ConfigureAwait(false);
         }
 
-        [Leto2Command, Usage, Description, Aliases]
+        [Leto2Command, Usage, Description, Aliases]  // EP Skill Test 
         public async Task EPTest(int num)
         {
+            // check to make sure its a valid number 0-99
             if (num < 0 || num > 99)
             {
                 await ReplyErrorLocalized("dice_invalid_number", 0, 99).ConfigureAwait(false);
@@ -44,9 +45,57 @@ namespace Leto2bot.Modules.EclipsePhase
            //generate skill roll
             var rng = new Leto2Random();
             var gen = rng.Next(0, 100);
-
-            await Context.Channel.SendConfirmAsync(gen.ToString(), num.ToString()).ConfigureAwait(false);
+            int roll = gen; 
+            
+            //Compare roll to target number to check for sucess
+            bool success = false; //true if successful
+            bool benchmark = false; //true if +30 margin
+            var type= "error"; // Type of sucesss or failure 
+            var margin = 0; // for margin of sucess and margin of failure      
+            
+            if (num > roll) //sucess check
+            {
+                success = true;
+                var margin = num - roll;
+                if (margin > 30 ) {type = "Excellent Success";}
+                else {type = "Success";}
+            }
+            else 
+            {
+                var margin = roll - num;
+                if (margin > 30 ) {type = "Severe Failure";}
+                else {type = "Failure";}
+            }
+            
+            //check for critical (doubles)
+            var critical = false; // true if critical roll 
+            int[] digits = new int[2];
+            for(int i = 1; i != 0; i--) // seperate tens and once place into seperate vars
+            {
+                digits[i] = (int)(num % 10);
+                num = num / 10;
+            }
+            if (digets[0] == digets[1]) //check if the tens and ones place matches 
+            {
+                critical = true;
+                type = "Critical " + type; 
+            }      
+            
+            // send out result 
+            if (success == true)
+            {
+            await Context.Channel.SendConfirmAsync(type + "!:", 
+                "Rolled Value: " + roll.ToString() ", Test to Make: " + num.ToString(),
+                "Margin of Sucess: +" + margin.ToString(),
+                .ConfigureAwait(false);
+            }
+            else
+            {
+                 await Context.Channel.SendConfirmAsync(type + "!:", 
+                "Rolled Value: " + roll.ToString() ", Test to Make: " + num.ToString(),
+                "Margin of Failure: +" + margin.ToString(),
+                .ConfigureAwait(false);
+            }
         }
-
     }
 }
