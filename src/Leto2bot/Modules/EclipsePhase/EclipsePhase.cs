@@ -49,35 +49,33 @@ namespace Leto2bot.Modules.EclipsePhase
             
             //Compare roll to target number to check for sucess
             bool success = false; //true if successful
-            bool benchmark = false; //true if +30 margin
-            var type= "error"; // Type of sucesss or failure 
+            int test = num;
+            var type = "error"; // Type of sucesss or failure 
             var margin = 0; // for margin of sucess and margin of failure      
             
-            if (num > roll) //sucess check
+            if (test > roll) //sucess check
             {
                 success = true;
-                var margin = num - roll;
-                if (margin > 30 ) {type = "Excellent Success";}
+                margin = test - roll;
+                if (margin >= 30 ) {type = "Excellent Success";}
                 else {type = "Success";}
             }
             else 
             {
-                var margin = roll - num;
-                if (margin > 30 ) {type = "Severe Failure";}
+                margin = roll - test;
+                if (margin >= 30 ) {type = "Severe Failure";}
                 else {type = "Failure";}
             }
             
             //check for critical (doubles)
-            var critical = false; // true if critical roll 
             int[] digits = new int[2];
             for(int i = 1; i != 0; i--) // seperate tens and once place into seperate vars
             {
                 digits[i] = (int)(num % 10);
                 num = num / 10;
             }
-            if (digets[0] == digets[1]) //check if the tens and ones place matches 
+            if (digits[0] == digits[1]) //check if the tens and ones place matches 
             {
-                critical = true;
                 type = "Critical " + type; 
             }      
             
@@ -85,15 +83,15 @@ namespace Leto2bot.Modules.EclipsePhase
             if (success == true)
             {
             await Context.Channel.SendConfirmAsync(type + "!:", 
-                "Rolled Value: " + roll.ToString() ", Test to Make: " + num.ToString(),
-                "Margin of Sucess: +" + margin.ToString(),
+                "Rolled Value: " + roll.ToString() + ", Test to Make: " + test.ToString() + 
+                "Margin of Sucess: +" + margin.ToString())
                 .ConfigureAwait(false);
             }
             else
             {
                  await Context.Channel.SendConfirmAsync(type + "!:", 
-                "Rolled Value: " + roll.ToString() ", Test to Make: " + num.ToString(),
-                "Margin of Failure: +" + margin.ToString(),
+                "Rolled Value: " + roll.ToString() + ", Test to Make: " + test.ToString() +
+                "Margin of Failure: +" + margin.ToString())
                 .ConfigureAwait(false);
             }
         }
