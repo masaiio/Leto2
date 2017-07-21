@@ -69,29 +69,26 @@ namespace Leto2bot.Modules.EclipsePhase
             
             //check for critical (doubles)
             int[] digits = new int[2];
-            for(int i = 1; i != 0; i--) // seperate tens and once place into seperate vars
-            {
-                digits[i] = (int)(num % 10);
-                num = num / 10;
-            }
+            digits[1] = roll / 10;
+            digits[0] = roll - (digits[1] * 10);
             if (digits[0] == digits[1]) //check if the tens and ones place matches 
             {
                 type = "Critical " + type; 
-            }      
-            
+            }
+
             // send out result 
             if (success == true)
             {
-            await Context.Channel.SendConfirmAsync(type + "!:", 
-                "Rolled Value: " + roll.ToString() + ", Test to Make: " + test.ToString() + 
-                "Margin of Sucess: +" + margin.ToString())
-                .ConfigureAwait(false);
+                await Context.Channel.SendConfirmAsync(type + "!:",
+                    "Rolled Value: " + roll.ToString() + ", Test to Make: " + test.ToString() +
+                    ", Margin of Sucess: +" + margin.ToString() + "digits: " + digits[0] + " " + digits[1])
+                    .ConfigureAwait(false);
             }
             else
             {
-                 await Context.Channel.SendConfirmAsync(type + "!:", 
-                "Rolled Value: " + roll.ToString() + ", Test to Make: " + test.ToString() +
-                "Margin of Failure: +" + margin.ToString())
+                await Context.Channel.SendConfirmAsync(type + "!:",
+               "Rolled Value: " + roll.ToString() + ", Test to Make: " + test.ToString() +
+               ", Margin of Failure: +" + margin.ToString() + "digits: " + digits[0] + " " + digits[1])
                 .ConfigureAwait(false);
             }
         }
