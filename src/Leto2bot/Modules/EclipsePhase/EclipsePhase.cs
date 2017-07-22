@@ -1,17 +1,25 @@
 ﻿using Discord.Commands;
 using Discord;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Leto2bot.Services;
 using System.Threading.Tasks;
 using Leto2bot.Attributes;
 using System;
+using System.IO;
+using System.Net;
+using System.Linq;
 using Leto2bot.Extensions;
 using Leto2bot.Services.EclipsePhase;
+using OAuth;
+
 
 namespace Leto2bot.Modules.EclipsePhase
 {
     public partial class EclipsePhase : Leto2TopLevelModule
     {
         private readonly EclipsePhaseService _eclipsephase;
+        private readonly IBotCredentials _creds;
         private readonly IImagesService _images;
 
         public EclipsePhase(EclipsePhaseService eclipsePhase, IImagesService images)
@@ -20,17 +28,81 @@ namespace Leto2bot.Modules.EclipsePhase
             _images = images;
         }
 
-        [Leto2Command, Usage, Description, Aliases] // EP Test command 
-        public async Task EPChoose([Remainder] string list = null)
+        public EclipsePhase(IBotCredentials creds)
         {
-            if (string.IsNullOrWhiteSpace(list))
-                return;
-            var listArr = list.Split(';');
-            if (listArr.Length < 2)
-                return;
-            var rng = new Leto2Random();
-            await Context.Channel.SendConfirmAsync("🤔", listArr[rng.Next(0, listArr.Length)]).ConfigureAwait(false);
+            _creds = creds;
         }
+
+        //public static void FinishWebRequest(IAsyncResult result)
+        //{
+        //    HttpWebResponse response = (HttpWebResponse)(result.AsyncState as HttpWebRequest).EndGetResponse(result);
+        //}
+
+        //[Leto2Command, Usage, Description, Aliases]
+        //public async Task ObsidianPortal([Remainder] string query = null)
+        //{
+        //    // check if keys are there 
+        //    if (string.IsNullOrWhiteSpace(_creds.OAuthConsumerKey))
+        //    {
+        //        await ReplyErrorLocalized("mashape_api_missing").ConfigureAwait(false);
+        //        return;
+        //    }
+        //    if (string.IsNullOrWhiteSpace(_creds.OAuthConsumerSecret))
+        //    {
+        //        await ReplyErrorLocalized("mashape_api_missing").ConfigureAwait(false);
+        //        return;
+        //    }
+        //    //check if there is a argument passedd
+        //    if (string.IsNullOrWhiteSpace(query))
+        //        return;
+
+        //    // Creating a new instance directly
+        //    OAuthRequest client = new OAuthRequest
+        //    {
+        //        Method = "GET",
+        //        Type = OAuthRequestType.RequestToken,
+        //        SignatureMethod = OAuthSignatureMethod.HmacSha1,
+        //        ConsumerKey = "",
+        //        ConsumerSecret = "",
+        //        RequestUrl = "https://www.obsidianportal.com/oauth/request_token",
+        //        Version = "1.0a",
+        //        Realm = "ObsidianPortal.com"
+        //    };
+
+
+        //    // Using HTTP header authorization
+        //    string auth = client.GetAuthorizationQuery();
+        //    var url = client.RequestUrl + "?" + auth;
+
+        //    var request = (HttpWebRequest)WebRequest.Create(url);
+        //   request.BeginGetResponse(new AsyncCallback(FinishWebRequest), request);
+
+        //    Console.Write(auth);
+        //    Console.ReadLine(); //idk what tihs is 
+
+        //    await Context.Channel.TriggerTypingAsync().ConfigureAwait(false);
+
+        //    // the authentication check?
+            
+        //    using (StreamReader SR = new StreamReader(response.GetResponseStream()))
+        //    {
+        //        Console.Write(SR.ReadToEnd());
+        //        var res = await client.GetStringAsync($"http://api.obsidianportal.com/v1/users/me.json").ConfigureAwait(false);
+        //        try
+        //        {
+        //            var items = JObject.Parse(res);
+        //            var item = items["list"][0];
+        //            var link = item["profile_url"].ToString();
+        //            var embed = new EmbedBuilder().WithOkColor()
+        //                             .WithUrl(link);
+        //            await Context.Channel.EmbedAsync(embed).ConfigureAwait(false);
+        //        }
+        //        catch
+        //        {
+        //            await ReplyErrorLocalized("ud_error").ConfigureAwait(false);
+        //        }
+        //    }
+        //}
 
         [Leto2Command, Usage, Description, Aliases]  // EP Skill Test 
         public async Task EPTest(int num)
@@ -81,14 +153,14 @@ namespace Leto2bot.Modules.EclipsePhase
             {
                 await Context.Channel.SendConfirmAsync(type + "!:",
                     "Rolled Value: " + roll.ToString() + ", Test to Make: " + test.ToString() +
-                    ", Margin of Sucess: +" + margin.ToString() + "digits: " + digits[0] + " " + digits[1])
+                    ", Margin of Sucess: +" + margin.ToString())
                     .ConfigureAwait(false);
             }
             else
             {
                 await Context.Channel.SendConfirmAsync(type + "!:",
                "Rolled Value: " + roll.ToString() + ", Test to Make: " + test.ToString() +
-               ", Margin of Failure: +" + margin.ToString() + "digits: " + digits[0] + " " + digits[1])
+               ", Margin of Failure: +" + margin.ToString())
                 .ConfigureAwait(false);
             }
         }

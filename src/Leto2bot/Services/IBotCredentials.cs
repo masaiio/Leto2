@@ -13,6 +13,8 @@ namespace Leto2bot.Services
         string MashapeKey { get; }
         string PatreonAccessToken { get; }
         string CarbonKey { get; }
+        string OAuthConsumerKey { get; }
+        string OAuthConsumerSecret { get; }
 
         DBConfig Db { get; }
 

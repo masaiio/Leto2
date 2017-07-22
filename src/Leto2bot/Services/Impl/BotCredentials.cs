@@ -27,6 +27,9 @@ namespace Leto2bot.Services.Impl
         public int TotalShards { get; }
         public string CarbonKey { get; }
 
+        public string OAuthConsumerKey { get; }
+        public string OAuthConsumerSecret { get; }
+
         private readonly string _credsFileName = Path.Combine(Directory.GetCurrentDirectory(), "credentials.json");
         public string PatreonAccessToken { get; }
         public string ShardRunCommand { get; }
@@ -88,6 +91,8 @@ namespace Leto2bot.Services.Impl
                 //    ? 
                 //    : scId;
                 CarbonKey = data[nameof(CarbonKey)];
+                OAuthConsumerKey = data[nameof(OAuthConsumerKey)];
+                OAuthConsumerSecret = data[nameof(OAuthConsumerSecret)];
                 var dbSection = data.GetSection("db");
                 Db = new DBConfig(string.IsNullOrWhiteSpace(dbSection["Type"]) 
                                 ? "sqlite" 
@@ -114,6 +119,8 @@ namespace Leto2bot.Services.Impl
             public string MashapeKey { get; set; } = "";
             public string SoundCloudClientId { get; set; } = "";
             public string CarbonKey { get; set; } = "";
+            public string OAuthConsumerKey { get; set; } = "";
+            public string OAuthConsumerSecret { get; set; } = "";
             public DBConfig Db { get; set; } = new DBConfig("sqlite", "Filename=./data/Leto2Bot.db");
             public int TotalShards { get; set; } = 1;
             public string PatreonAccessToken { get; set; } = "";
